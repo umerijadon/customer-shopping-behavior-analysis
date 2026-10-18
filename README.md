@@ -201,6 +201,6 @@ This project demonstrates how customer transaction data can be transformed into 
 
 ## Author
 
-**Jadon Umeri** *Aspiring Data Analyst | Python • SQL • Power BI • Business Analytics*
+**Jadon Umeri** *Data Analyst | Python • SQL • Power BI • Business Analytics*
 
 **Skills Demonstrated:** Python | Pandas | PostgreSQL | SQL | Power BI | Data Cleaning | Customer Segmentation | Revenue Analysis | Business Intelligence | Dashboard Development

@@ -1,165 +1,179 @@
-# customer-shopping-behavior-analysis.
+# customer-shopping-behavior-analysis
+
+![Customer Behavioral Analysis Dashboard](images/dashboard_overview.png)
+
+*Interactive Power BI dashboard with filters for subscription status, gender, category, and shipping type.*
 
 ## Project Overview
 
-This project analyzes customer shopping behavior across **3,900 retail purchases** to uncover spending patterns, customer segments, subscription behavior, product performance, and revenue drivers. 
+This project analyzes customer shopping behavior across 3,900 retail purchases to uncover spending patterns, customer segments, subscription behavior, product performance, and revenue drivers.
 
 The objective of the analysis was to:
 
-* Identify the major drivers of customer revenue
-* Understand behavioral patterns linked to subscription programs
-* Evaluate product performance and customer satisfaction ratings
-* Segment customers based on purchasing history and demographics
-* Provide actionable recommendations to improve customer engagement and revenue growth
+- Identify the major drivers of customer revenue
+- Understand behavioral patterns linked to subscription programs
+- Evaluate product performance and customer satisfaction ratings
+- Segment customers based on purchasing history and demographics
+- Provide actionable recommendations to improve customer engagement and revenue growth
 
-The project combined multiple operational datasets and applied a complete end-to-end analytics workflow using **Python**, **PostgreSQL**, and **Power BI**.
-
----
+The project combined multiple operational datasets and applied a complete end-to-end analytics workflow using Python, PostgreSQL, and Power BI.
 
 ## Business Problem
 
 Management wanted to better understand:
 
-* Which customers generate the most revenue
-* How subscription programs influence spending behavior
-* Which products receive the highest customer satisfaction ratings
-* Which customer segments deserve additional marketing investment
-* How discounts and promotions impact purchasing behavior
-* Which demographics contribute most to revenue growth
+- Which customers generate the most revenue
+- How subscription programs influence spending behavior
+- Which products receive the highest customer satisfaction ratings
+- Which customer segments deserve additional marketing investment
+- How discounts and promotions impact purchasing behavior
+- Which demographics contribute most to revenue growth
 
 The goal was to convert transactional data into actionable business insights that support customer retention, revenue growth, and targeted marketing initiatives.
 
----
-
 ## Tools & Technologies
 
-### Data Preparation
-* **Python** (Pandas, NumPy)
+**Data Preparation**
+- Python (Pandas, NumPy)
 
-### Database & Querying
-* **PostgreSQL** (SQL)
+**Database & Querying**
+- PostgreSQL (SQL)
 
-### Data Visualization
-* **Power BI**
+**Data Visualization**
+- Power BI
 
-### Analytical Techniques
-* Data Cleaning & Missing Value Treatment
-* Feature Engineering
-* Customer Segmentation
-* Revenue & Subscription Analysis
-* Product Performance Analysis
-* Business Intelligence Reporting
-
----
+**Analytical Techniques**
+- Data Cleaning & Missing Value Treatment
+- Feature Engineering
+- Customer Segmentation
+- Revenue & Subscription Analysis
+- Product Performance Analysis
+- Business Intelligence Reporting
 
 ## Dataset Overview
 
 The dataset contains customer transaction records across multiple product categories.
 
-### Dataset Summary
-
 | Metric | Value |
-| :--- | :--- |
-| **Total Purchases** | 3,900 |
-| **Total Columns** | 18 |
-| **Missing Values** | 37 |
-| **Customer Attributes** | Demographics, Subscription Status |
-| **Purchase Attributes** | Products, Categories, Revenue |
-| **Behavioral Attributes** | Discounts, Reviews, Shipping Preferences |
-
----
+|---|---|
+| Total Purchases | 3,900 |
+| Total Columns | 18 |
+| Missing Values | 37 |
+| Customer Attributes | Demographics, Subscription Status |
+| Purchase Attributes | Products, Categories, Revenue |
+| Behavioral Attributes | Discounts, Reviews, Shipping Preferences |
 
 ## Data Preparation & Cleaning
 
 A comprehensive data preparation process was performed before analysis.
 
 ### Data Validation
+
 Validation checks included missing value analysis, data type verification, duplicate checks, feature consistency reviews, and business rule validation.
 
 ### Missing Value Treatment
-The dataset contained 37 missing values in the `Review Rating` column. To preserve data quality, missing ratings were imputed using the **median rating** within each product category. This maintained rating integrity while minimizing bias.
+
+The dataset contained 37 missing values in the Review Rating column. To preserve data quality, missing ratings were imputed using the median rating within each product category. This maintained rating integrity while minimizing bias.
 
 ### Feature Engineering
+
 Several business-focused features were created:
-* **Age Groups:** Customer ages were segmented into meaningful demographic groups (*Young Adult*, *Adult*, *Middle-Aged*, *Senior*).
-* **Purchase Frequency:** Engineered to support customer segmentation, loyalty analysis, and retention insights.
+
+- **Age Groups:** Customer ages were segmented into meaningful demographic groups (Young Adult, Adult, Middle-Aged, Senior).
+- **Purchase Frequency:** Engineered to support customer segmentation, loyalty analysis, and retention insights.
 
 ### Data Standardization
-Additional preparation included column renaming using `snake_case` conventions, redundant field removal, and database-ready formatting.
 
----
+Additional preparation included column renaming using snake_case conventions, redundant field removal, and database-ready formatting.
 
 ## Database Integration
 
-After cleaning and transformation, the dataset was loaded into **PostgreSQL** to enable:
+After cleaning and transformation, the dataset was loaded into PostgreSQL to enable:
 
-* Structured business reporting
-* SQL-driven analysis
-* Customer segmentation
-* Revenue exploration
+- Structured business reporting
+- SQL-driven analysis
+- Customer segmentation
+- Revenue exploration
 
 The database served as the analytical foundation for all subsequent business intelligence work.
-
----
 
 ## SQL Analysis
 
 A series of business-focused SQL analyses were performed to address core performance questions.
 
 ### Revenue by Gender
+
 Compared revenue generated by male and female customers.
-> **Finding:** Male customers generated significantly higher total revenue than female customers within the analyzed dataset.
+
+**Finding:** Male customers generated significantly higher total revenue than female customers within the analyzed dataset.
 
 ### High-Spending Discount Users
+
 Identified customers who used discounts but still spent above-average purchase amounts.
-> **Business Insight:** Some customers remain high-value buyers even when discounts are applied. These represent premium-value shoppers and strong candidates for loyalty campaigns.
+
+**Business Insight:** Some customers remain high-value buyers even when discounts are applied. These represent premium-value shoppers and strong candidates for loyalty campaigns.
 
 ### Product Rating Analysis
+
 Analyzed average ratings across products to evaluate quality and satisfaction performance.
-> **Top Performing Products:** Gloves, Sandals, Boots, Hat, Skirt.
+
+**Top Performing Products:** Gloves, Sandals, Boots, Hat, Skirt.
 
 ### Shipping Preference Analysis
+
 Compared spending behavior across shipping methods.
-> **Finding:** Express shipping customers spent more per transaction than standard shipping customers. 
-> **Business Insight:** Customers willing to pay for faster delivery often demonstrate higher purchase intent and stronger purchasing power.
+
+**Finding:** Express shipping customers spent more per transaction than standard shipping customers.
+
+**Business Insight:** Customers willing to pay for faster delivery often demonstrate higher purchase intent and stronger purchasing power.
 
 ### Subscription Analysis
+
 Compared subscribers and non-subscribers.
-> **Key Findings:** Subscribers demonstrated strong loyalty behavior and generated a substantial share of revenue, confirming that subscription programs contribute positively to retention.
+
+**Key Findings:** Subscribers demonstrated strong loyalty behavior and generated a substantial share of revenue, confirming that subscription programs contribute positively to retention.
 
 ### Customer Segmentation
-Customers were segmented based on engagement thresholds:
-* **New Customers:** First-time buyers.
-* **Returning Customers:** Customers with moderate purchase history.
-* **Loyal Customers:** Highly engaged repeat buyers.
 
-> **Finding:** The majority of customers belonged to the *Loyal* segment, indicating strong baseline retention performance.
+Customers were segmented based on engagement thresholds:
+
+- **New Customers:** First-time buyers.
+- **Returning Customers:** Customers with moderate purchase history.
+- **Loyal Customers:** Highly engaged repeat buyers.
+
+**Finding:** The majority of customers belonged to the Loyal segment, indicating strong baseline retention performance.
 
 ### Revenue by Age Group
-Revenue contribution was analyzed across customer age segments.
-> **Finding:** *Young Adult* customers generated the highest overall revenue contribution, representing the most valuable demographic for future acquisition campaigns.
 
----
+Revenue contribution was analyzed across customer age segments.
+
+**Finding:** Young Adult customers generated the highest overall revenue contribution, representing the most valuable demographic for future acquisition campaigns.
 
 ## Power BI Dashboard
 
 An interactive Power BI dashboard was developed to visualize customer behavior and business performance.
 
+<p align="center">
+  <img src="images/dashboard_overview.png" alt="Customer Behavioral Analysis Dashboard" width="900">
+</p>
+
 ### Dashboard KPIs
-* **Total Customers:** 3.9K
-* **Average Purchase Amount:** $59.76
-* **Average Review Rating:** 3.75
+
+- **Number of Customers:** 3.9K
+- **Average Purchase Amount:** $59.76
+- **Average Review Rating:** 3.75
 
 ### Dashboard Features
+
 The dashboard enables leadership to quickly monitor performance and filter metrics dynamically by:
-* Subscription status and revenue by category
-* Sales volumes vs. revenue contribution by age group
-* Key customer demographic profiles
+
+- Subscription status and revenue by category
+- Sales volumes vs. revenue contribution by age group
+- Key customer demographic profiles
 
 ### Primary KPI: Average Purchase Amount
-This KPI was selected because it directly measures customer spending performance, helping management track spending trends, evaluate promotional effectiveness, and monitor revenue growth over time.
 
----
+This KPI was selected because it directly measures customer spending performance, helping management track spending trends, evaluate promotional effectiveness, and monitor revenue growth over time.
 
 ## Key Findings Summary
 
@@ -169,38 +183,32 @@ This KPI was selected because it directly measures customer spending performance
 4. **Loyal Customers Dominate the Customer Base:** Repeat purchasing behavior is a major contributor to business performance.
 5. **High-Value Discount Users Exist:** Discounts can attract substantial spending when targeted strategically.
 
----
-
 ## Business Recommendations
 
-* **Expand Subscription Adoption:** Promote subscriber-only benefits and incentives to increase enrollment.
-* **Strengthen Loyalty Programs:** Reward repeat customers to encourage long-term retention and higher lifetime value.
-* **Target High-Value Demographics:** Focus marketing efforts on Young Adult customers and high-spending customer groups.
-* **Promote Top-Rated Products:** Feature highly rated products prominently in advertising campaigns.
-* **Optimize Promotional Strategy:** Use discounts strategically to attract high-value customers without unnecessarily reducing margins.
-* **Leverage Shipping Insights:** Create premium shipping bundles for customers already demonstrating high purchase intent.
-
----
+1. **Expand Subscription Adoption:** Promote subscriber-only benefits and incentives to increase enrollment.
+2. **Strengthen Loyalty Programs:** Reward repeat customers to encourage long-term retention and higher lifetime value.
+3. **Target High-Value Demographics:** Focus marketing efforts on Young Adult customers and high-spending customer groups.
+4. **Promote Top-Rated Products:** Feature highly rated products prominently in advertising campaigns.
+5. **Optimize Promotional Strategy:** Use discounts strategically to attract high-value customers without unnecessarily reducing margins.
+6. **Leverage Shipping Insights:** Create premium shipping bundles for customers already demonstrating high purchase intent.
 
 ## What I Learned
 
 Through this project, I strengthened my ability to:
-* Clean and prepare large transactional datasets using Python
-* Build PostgreSQL analytical databases and write business-focused queries
-* Perform customer segmentation analysis
-* Develop executive dashboards in Power BI
-* Translate data into actionable business recommendations for stakeholders
 
----
+- Clean and prepare large transactional datasets using Python
+- Build PostgreSQL analytical databases and write business-focused queries
+- Perform customer segmentation analysis
+- Develop executive dashboards in Power BI
+- Translate data into actionable business recommendations for stakeholders
 
 ## Conclusion
 
 This project demonstrates how customer transaction data can be transformed into actionable business intelligence through a complete analytics workflow involving Python, PostgreSQL, SQL, and Power BI. By identifying key revenue drivers, understanding customer segments, and evaluating subscription behavior, the analysis provides practical recommendations that can improve customer engagement, increase retention, and drive sustainable revenue growth.
 
----
-
 ## Author
 
-**Jadon Umeri** *Data Analyst | Python • SQL • Power BI • Business Analytics*
+**Jadon Umeri**
+Data Analyst | Python • SQL • Power BI • Business Analytics
 
 **Skills Demonstrated:** Python | Pandas | PostgreSQL | SQL | Power BI | Data Cleaning | Customer Segmentation | Revenue Analysis | Business Intelligence | Dashboard Development

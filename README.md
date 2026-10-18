@@ -1,6 +1,6 @@
 # customer-shopping-behavior-analysis
 
-![Customer Behavioral Analysis Dashboard](dashboard/dashboard_overview.png)
+![Customer Behavioral Analysis Dashboard](dashboard/dashboard_screenshots/dashboard_overview.png)
 
 *Interactive Power BI dashboard with filters for subscription status, gender, category, and shipping type.*
 
